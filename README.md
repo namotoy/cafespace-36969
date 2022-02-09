@@ -1,24 +1,51 @@
-# README
+# DB 設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users table
 
-Things you may want to cover:
+| Column             | Type                | Options                   |
+|--------------------|---------------------|---------------------------|
+| email              | string              | null: false, unique: true |
+| encrypted_password | string              | null: false               |
+| name               | string              | null: false               |
+| prefecture_id      | integer             | null: false               |
+| city               | string              | null: false               |
 
-* Ruby version
+### Association
 
-* System dependencies
+* has_many :cafeworks
+* has_many :comments
 
-* Configuration
+## cafeworks table
 
-* Database creation
+| Column             | Type       | Options                        |
+|--------------------|------------|--------------------------------|
+| shop_name          | string     | null: false                    |
+| catch_copy         | text       | null: false                    |
+| feature            | text       | null: false                    |
+| prefecture_id      | integer    | null: false                    |
+| city               | string     | null: false                    |
+| block_number       | string     | null: false                    |
+| wifi               | integer    | null: false                    |
+| power_supply       | integer    | null: false                    |
+| capacity           | integer    | null: false                    |
+| toilet_place       | integer    | null: false                    |
+| cafe_price         | integer    | null: false                    |
+| user               | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments table
 
-* Deployment instructions
+| Column      | Type       | Options                        |
+|-------------|------------|--------------------------------|
+| content     | text       | null: false                    |
+| cafework    | references | null: false, foreign_key: true |
+| user        | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :cafework
+- belongs_to :user

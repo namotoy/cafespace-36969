@@ -12,10 +12,10 @@
 
 ### Association
 
-* has_many :cafeworks
+* has_many :cafes
 * has_many :comments
 
-## cafeworks table
+## cafes table
 
 | Column             | Type       | Options                        |
 |--------------------|------------|--------------------------------|
@@ -41,10 +41,10 @@
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
 | content     | text       | null: false                    |
-| cafework    | references | null: false, foreign_key: true |
+| cafe        | references | null: false, foreign_key: true |
 | user        | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :cafework
+- belongs_to :cafe
 - belongs_to :user

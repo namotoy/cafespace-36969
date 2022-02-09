@@ -21,7 +21,6 @@
 |--------------------|------------|--------------------------------|
 | shop_name          | string     | null: false                    |
 | catch_copy         | text       | null: false                    |
-| feature            | text       | null: false                    |
 | prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
 | block_number       | string     | null: false                    |

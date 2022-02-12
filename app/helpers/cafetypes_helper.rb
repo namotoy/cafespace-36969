@@ -1,0 +1,2 @@
+module CafetypesHelper
+end

@@ -87,7 +87,6 @@ RSpec.describe User, type: :model do
       it '市区町村が空だと保存できないこと' do
         @user.city = ''
         @user.valid?
-        binding.pry
         expect(@user.errors.full_messages).to include("City can't be blank")
       end
     end

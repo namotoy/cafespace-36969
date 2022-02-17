@@ -6,7 +6,7 @@
 |--------------------|---------------------|---------------------------|
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
-| name               | string              | null: false               |
+| nickname           | string              | null: false               |
 | prefecture_id      | integer             | null: false               |
 | city               | string              | null: false               |
 

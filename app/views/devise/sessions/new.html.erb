@@ -4,8 +4,10 @@
       <h2 class="page-heading">ユーザーログイン</h2>
 
         <%= form_with model: @user, url: new_user_session_path, local: true do |f| %>
+         <div class ="alert">
          <%= flash[:notice] %>
-         <div class ="alert"><%= flash[:alert] %></div>
+         <%= flash[:alert] %>
+         </div>
 
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />

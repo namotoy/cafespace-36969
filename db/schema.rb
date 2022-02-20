@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_11_092451) do
+ActiveRecord::Schema.define(version: 2022_02_20_100002) do
+
+  create_table "cafetypes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "shop_name", null: false
+    t.text "catch_copy", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
+    t.string "block_number", null: false
+    t.integer "wifi", null: false
+    t.integer "power_supply", null: false
+    t.integer "capacity", null: false
+    t.integer "toilet_place", null: false
+    t.integer "cafe_price", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cafetypes_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +44,5 @@ ActiveRecord::Schema.define(version: 2022_02_11_092451) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cafetypes", "users"
 end

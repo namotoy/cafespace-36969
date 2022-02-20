@@ -12,7 +12,7 @@
 
 ### Association
 
-* has_many :cafes
+* has_many :cafetypes
 * has_many :comments
 
 ## cafes table
@@ -46,5 +46,5 @@
 
 ### Association
 
-- belongs_to :cafe
+- belongs_to :cafetype
 - belongs_to :user

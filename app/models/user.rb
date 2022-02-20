@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  has_many :cafetypes
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true

@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        prefecture_id: 都道府県
+        city: 市区町村
+      cafetype:
+        prefecture_id: 都道府県
+        city: 市区町村
+        image: 画像
+        shop_name: 店舗名
+        catch_copy: キャッチコピー
+        block_number: 番地
+        cafe_price: コーヒー価格
+        power_supply: 電源
+        capacity: 席数
+        toilet_place: トイレの場所

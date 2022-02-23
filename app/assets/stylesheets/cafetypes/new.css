@@ -1,0 +1,12 @@
+.indispensable {
+  background: #ee281e;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.img-upload {
+  padding: 3vh 0;
+}

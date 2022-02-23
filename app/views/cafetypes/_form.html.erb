@@ -1,4 +1,6 @@
 <%= form_with model: @cafetype, local: true do |f|%>
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="img-upload">
       <div class="weight-bold-text">
         店舗画像

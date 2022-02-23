@@ -6,7 +6,7 @@ RSpec.describe Cafetype, type: :model do
   end
 
   describe '投稿の保存' do
-    
+
     context '投稿が保存できる場合' do
       it '全ての値が入力されていれば投稿できる' do
         expect(@cafetype).to be_valid
@@ -87,6 +87,7 @@ RSpec.describe Cafetype, type: :model do
       it 'userが紐付いていなければ保存できない' do
         @cafetype.user = @user
         @cafetype.valid?
+        binding.pry
         expect(@cafetype.errors.full_messages).to include('User must exist')
       end
     end

@@ -1,23 +1,81 @@
-<%= form_with model: モデル名, local: true do |f|%>
+<%= form_with model: @cafetype, local: true do |f|%>
+  <div class="img-upload">
+      <div class="weight-bold-text">
+        店舗画像
+        <span class="indispensable">必須</span><br />
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    
   <div class="field">
-    <%= f.label :hoge, "プロトタイプの名称" %><br />
-    <%= f.text_field :hoge, id:"prototype_title" %>
+    <%= f.label :shop_name, "店舗名" %>
+     <span class="indispensable">必須</span><br />
+    <%= f.text_field :shop_name, id:"prototype_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "キャッチコピー" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :catch_copy, "キャッチコピー" %>
+     <span class="indispensable">必須</span><br />
+    <%= f.text_area :catch_copy, class: :form__text, id:"prototype_catch_copy" %>
   </div>
 
   <div class="field">
-    <%= f.label :hoge, "コンセプト" %><br />
-    <%= f.text_area :hoge, class: :form__text, id:"prototype_concept" %>
-  </div>
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+</div>
 
-  <div class="field">
-    <%= f.label :hoge, "プロトタイプの画像" %><br />
-    <%= f.file_field :hoge, id:"prototype_image" %>
-  </div>
+<div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">市区町村</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）東京都新宿区"%>
+      </div>
+
+<div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">番地</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.text_field :block_number, class:"input-default", id:"addresses", placeholder:"例）渋谷1-1-1"%>
+      </div>
+
+ <div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">Wifi</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.collection_select(:wifi, Wifi.all, :id, :name, {}, {class:"select-box", id:"wifi"}) %>
+
+ <div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">電源</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.collection_select(:power_supply, PowerSupply.all, :id, :name, {}, {class:"select-box", id:"power_supply"}) %>
+
+ <div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">席数</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.collection_select(:capacity, Capacity.all, :id, :name, {}, {class:"select-box", id:"capacity"}) %>
+
+ <div class="field">
+        <div class='form-text-wrap'>
+          <label class="form-text">トイレの場所</label>
+          <span class="indispensable">必須</span><br />
+        </div>
+        <%= f.collection_select(:toilet_place, ToiletPlace.all, :id, :name, {}, {class:"select-box", id:"toilet_place"}) %>
+
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>

@@ -5,13 +5,11 @@
         <span class="indispensable">必須</span><br />
       </div>
       <div class="click-upload">
-        <p>
-          クリックしてファイルをアップロード
-        </p>
+        <p> クリックしてファイルをアップロード</p>
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    
+
   <div class="field">
     <%= f.label :shop_name, "店舗名" %>
      <span class="indispensable">必須</span><br />
@@ -75,6 +73,16 @@
           <span class="indispensable">必須</span><br />
         </div>
         <%= f.collection_select(:toilet_place, ToiletPlace.all, :id, :name, {}, {class:"select-box", id:"toilet_place"}) %>
+
+  <div class="price-content">
+          <div class="price-text">
+            <span>コーヒー価格（小サイズ）</span>
+            <span class="indispensable">必須</span>
+          </div>
+          <span class="sell-yen">¥</span>
+          <%= f.text_field :cafe_price, class:"price-input", id:"cafe-price", placeholder:"例）300" %>
+        
+        </div>
 
 
   <div class="actions">

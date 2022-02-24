@@ -162,6 +162,8 @@ a {
 }
 .card__img {
   margin-bottom: 16px;
+  width: 40vh;
+  height: 40vh;
 }
 .card__title {
   display: block;

@@ -1,7 +1,8 @@
 class CafetypesController < ApplicationController
   def index
-  
+    @cafetypes = Cafetype.all.order('created_at DESC')
   end
+  
   def new
     @cafetype = Cafetype.new
   end

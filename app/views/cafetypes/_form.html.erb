@@ -53,28 +53,28 @@
           <label class="form-text">Wifi</label>
           <span class="indispensable">必須</span><br />
         </div>
-        <%= f.collection_select(:wifi, Wifi.all, :id, :name, {}, {class:"select-box", id:"wifi"}) %>
+        <%= f.collection_select(:wifi_id, Wifi.all, :id, :name, {}, {class:"select-box", id:"wifi"}) %>
 
  <div class="field">
         <div class='form-text-wrap'>
           <label class="form-text">電源</label>
           <span class="indispensable">必須</span><br />
         </div>
-        <%= f.collection_select(:power_supply, PowerSupply.all, :id, :name, {}, {class:"select-box", id:"power_supply"}) %>
+        <%= f.collection_select(:power_supply_id, PowerSupply.all, :id, :name, {}, {class:"select-box", id:"power_supply"}) %>
 
  <div class="field">
         <div class='form-text-wrap'>
           <label class="form-text">席数</label>
           <span class="indispensable">必須</span><br />
         </div>
-        <%= f.collection_select(:capacity, Capacity.all, :id, :name, {}, {class:"select-box", id:"capacity"}) %>
+        <%= f.collection_select(:capacity_id, Capacity.all, :id, :name, {}, {class:"select-box", id:"capacity"}) %>
 
  <div class="field">
         <div class='form-text-wrap'>
           <label class="form-text">トイレの場所</label>
           <span class="indispensable">必須</span><br />
         </div>
-        <%= f.collection_select(:toilet_place, ToiletPlace.all, :id, :name, {}, {class:"select-box", id:"toilet_place"}) %>
+        <%= f.collection_select(:toilet_place_id, ToiletPlace.all, :id, :name, {}, {class:"select-box", id:"toilet_place"}) %>
 
   <div class="price-content">
           <div class="price-text">

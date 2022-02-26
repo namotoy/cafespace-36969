@@ -18,27 +18,27 @@
       <span><%= @cafetype.catch_copy %></span>
       </div>
 
-    <table class="detail-table">
-      <tbody>  
+      <table class="detail-table">
+       <tbody>  
         <tr>
           <th class="detail-item">住所</th>
-          <td class="detail-value"><%= @cafetype.prefecture.name %> <%= @cafetype.city %><%= @cafetype.block_number %></td>
+          <td class="detail-value"><%= @cafetype.prefecture.name %><%= @cafetype.city %><%= @cafetype.block_number %></td>
         </tr>
         <tr>
           <th class="detail-item">Wi-Fi</th>
-          <%# <td class="detail-value"><%= @cafetype.wifi_id.name %></td> %>
+          <td class="detail-value"><%= @cafetype.wifi.name %></td>
         </tr>
         <tr>
           <th class="detail-item">電源</th>
-          <td class="detail-value"><%= @cafetype.power_supply %></td>
+          <td class="detail-value"><%= @cafetype.power_supply.name %></td>
         </tr>
         <tr>
           <th class="detail-item">席数</th>
-          <%# <td class="detail-value"><%= @cafetype.capacity %></td> %>
+          <td class="detail-value"><%= @cafetype.capacity.name %></td>
         </tr>
         <tr>
           <th class="detail-item">トイレの場所</th>
-          <%# <td class="detail-value"><%= @cafetype.toilet_place %></td> %>
+          <td class="detail-value"><%= @cafetype.toilet_place.name %></td>
         </tr>
         <tr>
           <th class="detail-item">コーヒー価格（小サイズ）</th>
@@ -46,6 +46,7 @@
         </tr>
       </tbody>
     </table>
+
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%# <%= form_with model: モデル名,local: true do |f|%>

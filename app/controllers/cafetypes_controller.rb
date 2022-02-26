@@ -23,7 +23,7 @@ class CafetypesController < ApplicationController
 
   private
   def cafetype_params
-    params.require(:cafetype).permit(:shop_name, :image, :catch_copy, :prefecture_id, :city, :block_number, :wifi, :power_supply, :capacity, :toilet_place, :cafe_price).merge(user_id: current_user.id)
+    params.require(:cafetype).permit(:shop_name, :image, :catch_copy, :prefecture_id, :city, :block_number, :wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price).merge(user_id: current_user.id)
   end
 
 end

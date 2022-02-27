@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 2022_02_21_101744) do
     t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "block_number", null: false
-    t.integer "wifi", null: false
-    t.integer "power_supply", null: false
-    t.integer "capacity", null: false
-    t.integer "toilet_place", null: false
+    t.integer "wifi_id", null: false
+    t.integer "power_supply_id", null: false
+    t.integer "capacity_id", null: false
+    t.integer "toilet_place_id", null: false
     t.integer "cafe_price", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

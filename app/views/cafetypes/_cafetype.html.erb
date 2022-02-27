@@ -1,7 +1,7 @@
 <div class="card">
-  <%= link_to image_tag(cafetype.image, class: :card__img ), root_path%>
+  <%= link_to image_tag(cafetype.image, class: :card__img ), cafetype_path(cafetype.id)%>
   <div class="card__body">
-    <%= link_to cafetype.shop_name, root_path, class: :card__title%>
+    <%= link_to cafetype.shop_name, cafetype_path(cafetype.id), class: :card__title%>
    
     <p class="card__summary"> [<%= cafetype.city %>]<br><%= cafetype.catch_copy %>
     </p>

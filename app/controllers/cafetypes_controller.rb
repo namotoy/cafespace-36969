@@ -1,6 +1,6 @@
 class CafetypesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_cafetype, except: [:index, :new, :create]
-  before_action :authenticate_user!, expect: [:index, :show]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index

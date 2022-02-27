@@ -1,4 +1,6 @@
 class CafetypesController < ApplicationController
+  before_action :authenticate_user!, only:[:new]
+  
   def index
     @cafetypes = Cafetype.all.order('created_at DESC')
   end

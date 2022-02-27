@@ -22,6 +22,20 @@ class CafetypesController < ApplicationController
     @cafetype = Cafetype.find(params[:id])
   end
 
+  def edit
+    @cafetype = Cafetype.find(params[:id])
+  end
+  
+  def update
+    @cafetype = Cafetype.find(params[:id])
+    if @cafetype.update(cafetype_params)
+      redirect_to cafetype_path
+    else
+      render :edit
+    end
+  end
+
+
 
   private
   def cafetype_params

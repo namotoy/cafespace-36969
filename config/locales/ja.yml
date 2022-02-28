@@ -13,6 +13,7 @@ ja:
         catch_copy: キャッチコピー
         block_number: 番地
         cafe_price: コーヒー価格
-        power_supply: 電源
-        capacity: 席数
-        toilet_place: トイレの場所
+        power_supply_id: 電源
+        capacity_id: 席数
+        toilet_place_id: トイレの場所
+        

@@ -25,17 +25,25 @@ class CafetypesController < ApplicationController
   end
 
   def edit
-    
+
   end
   
   def update
-    
     if @cafetype.update(cafetype_params)
       redirect_to cafetype_path
     else
       render :edit
     end
   end
+
+  def destroy
+    if @cafetype.destroy
+     redirect_to root_path
+    else
+     redirect_to cafetype_path
+    end
+  end
+
 
 
 

@@ -4,7 +4,7 @@
       <p class="prototype__hedding">
         <%= @cafetype.shop_name %>
       </p>
-      <%= link_to "by 店舗情報の投稿者", root_path, class: :prototype__user %>
+      <%= link_to "by #{@cafetype.user.nickname}", user_path(@cafetype.user), class: :prototype__user %>
       
       <% if current_user == @cafetype.user %>
         <div class="prototype__manage">

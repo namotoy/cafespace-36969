@@ -5,6 +5,6 @@
    
     <p class="card__summary"> [<%= cafetype.city %>]<br><%= cafetype.catch_copy %>
     </p>
-    <%= link_to cafetype.user.nickname, root_path, class: :card__user %>
+    <%= link_to "by #{cafetype.user.nickname}", user_path(cafetype.user), class: :card__user %>
   </div>
 </div>

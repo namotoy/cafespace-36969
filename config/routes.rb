@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'cafetypes/index'
   root to: "cafetypes#index"
   resources :cafetypes
+  resources :users, only: :show
+  
 end

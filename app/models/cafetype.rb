@@ -14,9 +14,9 @@ class Cafetype < ApplicationRecord
                   message: ' が設定範囲外です' }
   validates :prefecture_id,:wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price, numericality:{ other_than: 0, message: "を入力してください " }
 
-  def self.search(serch)
+  def self.search(search)
     if search != ""
-      Cafetype.where('text LIKE(?)', "%#{search}%")
+      Cafetype.where('shop_name LIKE(?)', "%#{search}%")
     else
       Cafetype.all
     end

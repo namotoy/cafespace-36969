@@ -1,6 +1,6 @@
 class CafetypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_cafetype, except: [:index, :new, :create]
+  before_action :set_cafetype, except: [:index, :new, :create, :search]
   before_action :move_to_index, only: [:edit, :update, :destroy]
   
   def index
@@ -44,8 +44,9 @@ class CafetypesController < ApplicationController
     end
   end
 
-
-
+  def search
+    @cafetypes = Cafetype.search(params[:keyword])
+  end
 
   private
   def cafetype_params

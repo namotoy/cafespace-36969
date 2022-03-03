@@ -103,10 +103,11 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  width: 50%;
 }
 
 .form__text {
-  width: 50%;
+  width: 100%;
 }
 
 .field{
@@ -150,9 +151,10 @@ a {
   margin-bottom: 28px;
 }
 .card__wrapper {
+  margin: 40px 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
@@ -173,8 +175,10 @@ a {
 }
 .card__summary {
   font-size: 16px;
+  width: 50vh;
 }
 .card__user {
+  width: 50vh;
   display: block;
   font-size: 12px;
   color: #999;

@@ -103,10 +103,11 @@ a {
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);
+  width: 50%;
 }
 
 .form__text {
-  width: 50%;
+  width: 100%;
 }
 
 .field{
@@ -150,9 +151,10 @@ a {
   margin-bottom: 28px;
 }
 .card__wrapper {
+  margin: 40px 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
@@ -173,18 +175,51 @@ a {
 }
 .card__summary {
   font-size: 16px;
+  width: 50vh;
 }
 .card__user {
-<<<<<<< Updated upstream
-=======
-  width: 30vh;
->>>>>>> Stashed changes
-  display: block;
+  width: 50vh;
   font-size: 15px;
   color: #999;
   text-align: left;
   text-decoration: underline;
 }
+form input,
+form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  background-color: #57C3E9;
+  border-radius: 50px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #3abdec;
+}
+
+.search-form {
+  text-align: center;
+  padding: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
 
 /* 詳細ページ */
 .prototype__wrapper{

@@ -53,7 +53,7 @@
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <%# <%= form_with model: モデル名,local: true do |f|%>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
+              <%# <%= f.label :hoge, "コメント"<br /> %>
               <%# <%= f.text_field :hoge, id:"comment_content" %>
             </div>
             <div class="actions">
@@ -63,10 +63,10 @@
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <li class="comments_list">
+            <%# <li class="comments_list"> %>
               <%# <%= " コメントのテキスト "%>
               <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
-            </li>
+            <%# </li> %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>

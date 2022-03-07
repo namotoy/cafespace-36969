@@ -13,4 +13,12 @@ class Cafetype < ApplicationRecord
   numericality: { greater_than_or_equal_to: 100, less_than_or_equal_to: 9999, only_integer: true,
                   message: ' が設定範囲外です' }
   validates :prefecture_id,:wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price, numericality:{ other_than: 0, message: "を入力してください " }
+
+  def self.search(search)
+    if search != ""
+      Cafetype.where('shop_name LIKE(?)', "%#{search}%")
+    else
+      Cafetype.all
+    end
+  end
 end

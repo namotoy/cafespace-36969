@@ -1,0 +1,53 @@
+ <h2 class="page-heading">検索ページ</h2>
+ <p><%= link_to 'トップページへ戻る', root_path %></p>
+
+<div class="card__wrapper">
+  <% @cafetypes.each do |cafetype| %>
+    <%= render partial: "cafetype", locals: { cafetype: cafetype } %>
+  <% end %>
+</div>
+  <%= search_form_for @q, url: search_cafetypes_path, html: {id: "detailed-search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :shop_name, '店舗名' %>
+      <br>
+      <%= f.text_field :shop_name, placeholder: '店舗名' ,value: params[:q]&.dig(:shop_name) %>
+    </div>
+     <div class="search-field">
+      <%= f.label :prefecture_id_eq, '都道府県' %>
+      <br>
+      <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+    <div class="search-field">
+      <%= f.label :city_cont, '市区町村' %>
+      <br>
+      <%= f.text_field :city_cont, placeholder: '市区町村' %>
+    </div>
+     <div class="search-field">
+      <%= f.label :wifi_id_eq, 'WiFi' %>
+      <br>
+      <%= f.collection_select(:wifi_id_eq, Wifi.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+     <div class="search-field">
+      <%= f.label :power_supply_id_eq, '電源' %>
+      <br>
+      <%= f.collection_select(:power_supply_id_eq, PowerSupply.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+     <div class="search-field">
+      <%= f.label :capacity_id_eq, '席数' %>
+      <br>
+      <%= f.collection_select(:capacity_id_eq, Capacity.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+     <div class="search-field">
+      <%= f.label :toilet_place_id_eq, 'トイレの場所' %>
+      <br>
+      <%= f.collection_select(:toilet_place_id_eq, ToiletPlace.all, :id, :name, {include_blank: "---"}) %>
+    </div>
+     <div class="search-field">
+      <%= f.label :cafe_price_gteq, 'コーヒー価格'%>
+      <br>
+      <%= f.number_field :cafe_price_gteq %> 円以上
+      <%= f.number_field :cafe_price_lteq %> 円以下
+    </div>
+
+    <%= f.submit '検索', class: "search-btn" %>
+  <% end %>

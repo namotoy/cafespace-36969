@@ -1,6 +1,6 @@
 <%= form_with model: @cafetype, local: true do |f|%>
 <%= render 'shared/error_messages', model: f.object %>
-
+ <p><%= link_to 'トップページへ戻る', root_path , class: :greeting__link %></p>
   <div class="img-upload">
       <div class="weight-bold-text">
         店舗画像

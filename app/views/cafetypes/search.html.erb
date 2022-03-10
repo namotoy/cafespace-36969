@@ -1,11 +1,12 @@
- <h2 class="page-heading">検索ページ</h2>
- <p><%= link_to 'トップページへ戻る', root_path %></p>
+<div class="inner">
+    <h2 class="page-heading">検索ページ</h2>
+      <p><%= link_to 'トップページへ戻る', root_path , class: :greeting__link %></p>
 
-<div class="card__wrapper">
-  <% @cafetypes.each do |cafetype| %>
-    <%= render partial: "cafetype", locals: { cafetype: cafetype } %>
-  <% end %>
-</div>
+    <div class="card__wrapper">
+      <% @cafetypes.each do |cafetype| %>
+       <%= render partial: "cafetype", locals: { cafetype: cafetype } %>
+      <% end %>
+    </div>
   <%= search_form_for @q, url: search_cafetypes_path, html: {id: "detailed-search-form"} do |f| %>
     <div class="search-field">
       <%= f.label :shop_name, '店舗名' %>
@@ -51,3 +52,4 @@
 
     <%= f.submit '検索', class: "search-btn" %>
   <% end %>
+ </div>

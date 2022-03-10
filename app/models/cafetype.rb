@@ -8,11 +8,11 @@ class Cafetype < ApplicationRecord
   belongs_to :capacity
   belongs_to :toilet_place
   validates :image,:shop_name, :catch_copy,:city,:block_number, presence: true
-  validates :cafe_price, numericality:{ with: /\A[0-9]+\z/, message: ' が無効です。半角文字で入力してください' }
+  validates :prefecture_id,:wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price, numericality:{ other_than: 0, message: "を入力してください " }
+  validates :cafe_price, numericality:{ with: /\A[0-9]+\z/, message: 'が無効です。半角文字で入力してください' }
   validates :cafe_price,
   numericality: { greater_than_or_equal_to: 100, less_than_or_equal_to: 9999, only_integer: true,
-                  message: ' が設定範囲外です' }
-  validates :prefecture_id,:wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price, numericality:{ other_than: 0, message: "を入力してください " }
+                  message: 'が設定範囲外です' }
 
   def self.search(search)
     if search != ""

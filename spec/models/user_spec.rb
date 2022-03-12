@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
       it '都道府県を選択していないと保存できないこと' do
         @user.prefecture_id = 0
         @user.valid?
-        expect(@user.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@user.errors.full_messages).to include("Prefecture を入力してください")
       end
       it '市区町村が空だと保存できないこと' do
         @user.city = ''

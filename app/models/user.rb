@@ -7,7 +7,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :nickname, presence: true
-  # validates :prefecture_id, presence: true
   validates :prefecture_id, 
   numericality: { other_than: 0, message: "を入力してください" }
   validates :city, presence: true

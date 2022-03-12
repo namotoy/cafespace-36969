@@ -1,5 +1,9 @@
 import consumer from "./consumer"
 
+if(location.pathname.match(/\/cafetypes\/\d/)){
+}
+
+
 consumer.subscriptions.create("CommentChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
@@ -10,6 +14,14 @@ consumer.subscriptions.create("CommentChannel", {
   },
 
   received(data) {
-    // Called when there's incoming data on the websocket for this channel
+    const html = `
+    <div class="comment">
+    <p class="user-info">${data.user.nickname}: </p>
+    <p>${data.comment.text}</p>
+    </div>`
+    const comments = document.getElementById("comments")
+    comments.insertAdjacentHTML('beforeend', html)
+    const commentForm = document.getElementById("comment-form")
+    commentForm.reset();
   }
 });

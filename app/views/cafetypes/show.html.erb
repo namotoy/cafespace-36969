@@ -54,30 +54,22 @@
       <h4>＜コメント一覧＞</h4>
         <% @cafetype.comments.each do |comment| %>
           <div class="comment">
-            <p class="user-info"><%= comment.user.nickname %>： </p>
+            <p class="user-info"><%= link_to "#{comment.user.nickname}",user_path(@cafetype.user) %>： </p>
             <p><%= comment.text %></p>
           </div>
         <% end %>
     </div>
 
      
-      <div class= "comment-form">
-        <% if user_signed_in? %>
-          <%= form_with model: [@cafetype,@comment], id: "comment-form" , local: true do |f| %>
+        <div class= "comment-form">
+          <% if user_signed_in? %>
+            <%= form_with model: [@cafetype,@comment], id: "comment-form" , local: true do |f| %>
               <%= f.label :text, "コメント" %><br />
               <%= f.text_field :text, id:"comment-text" %>
               <%= f.submit "コメントする", class: "comment-submit" %> 
+             <% end %>
           <% end %>
-        <% end %>
-      </div>
-        <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <%# <li class="comments_list"> %>
-              <%# <%= " コメントのテキスト "%>
-              <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
-            <%# </li> %>
-          <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
-        </ul>
+        </div>
       </div>
     </div>
   </div>

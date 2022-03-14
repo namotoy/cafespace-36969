@@ -6,6 +6,8 @@ class CommentsController < ApplicationController
       CommentChannel.broadcast_to @cafetype, {comment: @comment, user: @comment.user}
       # ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user}
       # redirect_to cafetype_path(params[:cafetype_id])
+    else
+      render "cafetypes/show"
     end
   end
 

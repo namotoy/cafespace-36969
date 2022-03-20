@@ -116,6 +116,7 @@ a {
 
 .actions{
   margin-bottom: 40px;
+
 }
 
 .form__btn{
@@ -195,7 +196,7 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
+  background-color: #01b5f7;
   border-radius: 50px;
   color: #fff;
   border: 0;

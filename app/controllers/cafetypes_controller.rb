@@ -21,7 +21,8 @@ class CafetypesController < ApplicationController
   end
 
   def show
-   
+   @comments = @cafetype.comments.includes(:user)
+   @comment = Comment.new
   end
 
   def edit

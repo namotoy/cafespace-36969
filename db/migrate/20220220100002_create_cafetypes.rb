@@ -14,5 +14,8 @@ class CreateCafetypes < ActiveRecord::Migration[6.0]
       t.references :user,        null: false,foreign_key: true
       t.timestamps
     end
+    add_column :cafetypes, :address, :string
+    add_column :cafetypes, :latitude, :float
+    add_column :cafetypes, :longitude, :float
   end
 end

@@ -8,7 +8,7 @@ class Cafetype < ApplicationRecord
   belongs_to :capacity
   belongs_to :toilet_place
   has_many :comments
-  validates :image,:shop_name, :catch_copy,:city,:block_number, presence: true
+  validates :image,:shop_name, :catch_copy,:city,:block_number,:address, presence: true
   validates :prefecture_id,:wifi_id, :power_supply_id, :capacity_id, :toilet_place_id, :cafe_price, numericality:{ other_than: 0, message: "を入力してください " }
   validates :cafe_price, numericality:{ with: /\A[0-9]+\z/, message: 'が無効です。半角文字で入力してください' }
   validates :cafe_price,
@@ -22,6 +22,4 @@ class Cafetype < ApplicationRecord
       Cafetype.all
     end
   end
-  geocoded_by :address
-  after_validation :geocode, if: :address_changed?
 end

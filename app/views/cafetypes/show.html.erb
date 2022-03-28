@@ -50,10 +50,10 @@
       </tbody>
     </table>
 
-<h2>詳細位置</h2>
+<h2> 店舗地図</h2>
 <br>
-<input id="address" type="textbox" value="<%= @cafetype.prefecture.name %><%= @cafetype.city %><%= @cafetype.block_number %>">
-<input type="button" value="店舗位置表示" onclick="codeAddress()">
+<input type="button" value="表示する" onclick="codeAddress()">
+<input id="address" class="map-value" type="textbox" value="<%= @cafetype.prefecture.name %><%= @cafetype.city %><%= @cafetype.block_number %>">
 <div id='map'>
 </div>
 

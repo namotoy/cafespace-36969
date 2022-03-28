@@ -17,6 +17,12 @@
   border: 1px solid #dedede;
   font-size: 14px;
 }
+.map-value {
+  width: 30%;
+  padding: 5px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+}
 
 .cafetype-catch_copy-box {
   font-size: 18px;

@@ -49,6 +49,27 @@
         </tr>
       </tbody>
     </table>
+    
+  <div id="comments">
+   <h4>＜コメント一覧＞</h4>
+     <% @cafetype.comments.each do |comment| %>
+       <div class="comment">
+         <p class="user-info"><%= link_to "#{comment.user.nickname}",user_path(@cafetype.user) %>： </p>
+         <p><%= comment.text %></p>
+       </div>
+     <% end %>
+ </div>
+
+  
+     <div class= "comment-form">
+       <% if user_signed_in? %>
+         <%= form_with model: [@cafetype,@comment], id: "comment-form" , local: true do |f| %>
+           <%= f.label :text, "コメント" %><br />
+           <%= f.text_field :text, id:"comment-text" %>
+           <%= f.submit "コメントする", class: "comment-submit" %> 
+          <% end %>
+       <% end %>
+     </div>
 
 <h2> 店舗地図</h2>
 <br>
@@ -105,26 +126,6 @@ function codeAddress(){
     async defer></script>
 
 
-     <div id="comments">
-      <h4>＜コメント一覧＞</h4>
-        <% @cafetype.comments.each do |comment| %>
-          <div class="comment">
-            <p class="user-info"><%= link_to "#{comment.user.nickname}",user_path(@cafetype.user) %>： </p>
-            <p><%= comment.text %></p>
-          </div>
-        <% end %>
-    </div>
-
-     
-        <div class= "comment-form">
-          <% if user_signed_in? %>
-            <%= form_with model: [@cafetype,@comment], id: "comment-form" , local: true do |f| %>
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text, id:"comment-text" %>
-              <%= f.submit "コメントする", class: "comment-submit" %> 
-             <% end %>
-          <% end %>
-        </div>
       </div>
     </div>
   </div>

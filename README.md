@@ -50,9 +50,10 @@ Basic認証
 [![Image from Gyazo](https://i.gyazo.com/c31501f965d95ef9ef66e6f3777f74fc.gif)](https://gyazo.com/c31501f965d95ef9ef66e6f3777f74fc)
 
 - 地図表示機能
-
+[![Image from Gyazo](https://i.gyazo.com/58480503d2745dd866b462440dc9f865.gif)](https://gyazo.com/58480503d2745dd866b462440dc9f865)
 
 - コメント投稿機能
+[![Image from Gyazo](https://i.gyazo.com/7bccae573edce46ddadf88b630263f0d.gif)](https://gyazo.com/7bccae573edce46ddadf88b630263f0d)
 
 # ローカルでの動作方法	
 

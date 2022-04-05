@@ -66,3 +66,4 @@ gem 'ransack'
 gem 'dotenv-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem "aws-sdk-s3", require: false

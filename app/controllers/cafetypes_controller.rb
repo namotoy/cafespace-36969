@@ -46,7 +46,6 @@ class CafetypesController < ApplicationController
   end
 
   def search
-    # @cafetypes = Cafetype.search(params[:keyword])
     if params[:q]&.dig(:shop_name)
       squished_keywords = params[:q][:shop_name].squish
       params[:q][:shop_name_cont_any] = squished_keywords.split(" ")

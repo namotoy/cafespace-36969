@@ -11,7 +11,7 @@
     <div class="search-field">
       <%= f.label :shop_name, '店舗名' %>
       <br>
-      <%= f.text_field :shop_name, placeholder: '店舗名' ,value: params[:q]&.dig(:shop_name) %>
+      <%= f.text_field :shop_name, value: params[:q]&.dig(:shop_name) %>
     </div>
      <div class="search-field">
       <%= f.label :prefecture_id_eq, '都道府県' %>
@@ -21,7 +21,7 @@
     <div class="search-field">
       <%= f.label :city_cont, '市区町村' %>
       <br>
-      <%= f.text_field :city_cont, placeholder: '市区町村' %>
+      <%= f.text_field :city_cont %>
     </div>
      <div class="search-field">
       <%= f.label :wifi_id_eq, 'WiFi' %>

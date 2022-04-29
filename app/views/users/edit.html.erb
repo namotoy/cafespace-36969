@@ -1,0 +1,43 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+    <p><%= link_to 'トップページへ戻る', root_path , class: :greeting__link %></p>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのアカウント編集"%>
+      </h2>
+      <%# <%= form_with model: @user, url: user_path, method: :put, local: true do |f| %> 
+       <%= form_with model: @user, local: true do |f|%>
+       <%= render 'shared/error_messages', model: f.object %>
+        <div class="field">
+          <%= f.label :nickname, "ユーザー名" %><br />
+          <%= f.text_field :nickname, id:"user_name" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :prefecture, "都道府県" %><br />
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+        </div>
+
+        <div class="field">
+          <%= f.label :city, "市区町村" %><br />
+          <%= f.text_field :city,  id:"user_city" %>
+
+        </div>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, id:"user_email", autofocus: true, autocomplete: "email" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <%= f.password_field :password, id:"user_password", autocomplete: "new-password" %>
+        </div>
+
+
+        <div class="actions">
+          <%= f.submit "更新", class: :form__btn  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

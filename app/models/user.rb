@@ -12,5 +12,5 @@ class User < ApplicationRecord
   numericality: { other_than: 0, message: "を入力してください" }
   validates :city, presence: true
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX
+  validates_format_of :password, with: PASSWORD_REGEX, on: :create
 end
